@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<!--
+  ~ Copyright (c) 2018 ACINO Consortium
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="970.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="org.onosproject.orchestrator.dismi.client.controllers.IntentController">
+  <children>
+    <GridPane hgap="5.0" prefHeight="383.0" prefWidth="970.0">
+      <children>
+        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="125.0" text="Intent Name:" GridPane.columnSpan="2" />
+        <TextField fx:id="intentName" GridPane.columnIndex="2" GridPane.columnSpan="4" />
+        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="121.0" text="Topology (Action):" GridPane.columnIndex="8" GridPane.columnSpan="2" />
+        <ComboBox fx:id="actionType" prefHeight="25.0" prefWidth="250.0" GridPane.columnIndex="10" GridPane.columnSpan="4" />
+        <Label alignment="CENTER" prefHeight="17.0" prefWidth="121.0" text="Source:" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+        <Label fx:id="dstlab" alignment="CENTER" prefHeight="17.0" prefWidth="125.0" text="Destination:" GridPane.columnIndex="11" GridPane.columnSpan="2" GridPane.rowIndex="1" />
+        <ListView fx:id="source" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.columnSpan="4" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+        <ListView fx:id="destination" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="10" GridPane.columnSpan="4" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+        <Pane depthTest="INHERIT" opacity="1.0" prefHeight="136.0" prefWidth="705.9998779296875" style="-fx-background-color: e6e6e6;-fx-border-color: black;" GridPane.columnIndex="1" GridPane.columnSpan="13" GridPane.rowIndex="5" GridPane.rowSpan="3">
+          <children>
+            <TextField fx:id="bandwidth" layoutX="98.0" layoutY="19.0" prefHeight="25.0" prefWidth="110.0" />
+            <ComboBox fx:id="security" layoutX="98.0" layoutY="84.0" prefHeight="25.0" prefWidth="212.0" />
+            <Label layoutX="30.0" layoutY="87.0" prefWidth="65.0" text="Security :" />
+            <ComboBox fx:id="bwUnit" layoutX="209.0" layoutY="19.0" prefHeight="25.0" prefWidth="100.0" />
+            <CheckBox fx:id="highAva" layoutX="458.0" layoutY="19.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="158.0" text="High Availability" />
+            <Label layoutX="30.0" layoutY="54.0" prefHeight="16.999900000002526" prefWidth="65.0" text="Latency :" />
+            
+            <ComboBox fx:id="lUnit" layoutX="209.0" layoutY="50.0" prefHeight="25.0" prefWidth="100.0" />
+            <TextField fx:id="latency" layoutX="98.0" layoutY="50.0" prefHeight="25.0" prefWidth="100.0" />
+            
+            <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="23.0" prefHeight="17.0" prefWidth="82.0" text="Bandwidth :" />
+            
+            <CheckBox fx:id="availChk" layoutX="458.0" layoutY="68.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="100.0" text="Availability" />
+            <ComboBox fx:id="avail" layoutX="575.0" layoutY="65.0" />
+                        
+          </children>
+        </Pane>
+        <Button fx:id="save" mnemonicParsing="false" prefHeight="21.0" prefWidth="178.0" text="Save Intent" textFill="#0029ff" GridPane.columnIndex="6" GridPane.columnSpan="3" GridPane.rowIndex="8" />
+        <CheckBox fx:id="negotiable" mnemonicParsing="false" prefHeight="17.0" prefWidth="119.0" text="Negotiable" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+        <Label prefWidth="236.0" text="Intent Level Constraint:" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="4">
+          <font>
+            <Font name="System Bold" size="14.0" />
+          </font>
+        </Label>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="66.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="62.0" minHeight="7.0" prefHeight="39.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="56.0" minHeight="0.0" prefHeight="15.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="75.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="78.0" minHeight="9.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <TableView fx:id="intentTable" prefHeight="180.0" prefWidth="970.0">
+      <columns>
+        <TableColumn prefWidth="33.0" text="No" />
+        <TableColumn prefWidth="60.0" text="status" />
+        <TableColumn prefWidth="149.0" text="Name" />
+        <TableColumn prefWidth="85.0" text="Type" />
+        <TableColumn prefWidth="151.0" text="Source" />
+        <TableColumn prefWidth="151.0" text="Destination" />
+        <TableColumn prefWidth="280.0" text="Constraints" />
+      </columns>
+    </TableView>
+    <GridPane hgap="5.0" prefHeight="45.0" prefWidth="938.0">
+      <children>
+        <Button fx:id="submitService" mnemonicParsing="false" prefHeight="25.0" prefWidth="158.0" text="Submit Service" GridPane.columnIndex="9" GridPane.columnSpan="4" />
+        <Button fx:id="clearService" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Clear" GridPane.columnIndex="12" GridPane.columnSpan="2" />
+        <Button fx:id="closeService" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Close" GridPane.columnIndex="14" GridPane.columnSpan="2" />
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</VBox>

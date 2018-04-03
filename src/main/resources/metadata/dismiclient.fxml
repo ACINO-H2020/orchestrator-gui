@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<!--
+  ~ Copyright (c) 2018 ACINO Consortium
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<VBox fx:id="mainWindow" prefHeight="710.0" prefWidth="1282.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="org.onosproject.orchestrator.dismi.client.controllers.DismiServiceController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Dismi">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Configuration" fx:id="configuration">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="/icons/configuration.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" text="Log" fx:id="logCommand">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="/icons/log.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" text="Refresh" fx:id="refresh">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="/icons/refresh.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </MenuItem>
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" fx:id="quit">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="/icons/quit.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </MenuItem>
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Service">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" fx:id="newService">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="/icons/newService.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" text="Delete" fx:id="deleteService">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="/icons/deleteService.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" text="Submit" fx:id="submitService">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="/icons/submitService.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </MenuItem>
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Connection Point">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" fx:id="newCP">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="/icons/addCP.gif" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" text="Update" fx:id="updateCP">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="/icons/editCP.gif" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" text="Delete" fx:id="deleteCP">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="/icons/deleteCP.gif" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" text="View" fx:id="viewCP">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="/icons/viewCP.gif" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" text="Load from File" fx:id="loadCP">
+              <graphic>
+                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="/icons/loadCP.gif" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </MenuItem>
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Symbols" fx:id="symbols" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <SplitPane fx:id="mainSplitPane" dividerPositions="0.2390625" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="28.0" prefWidth="295.0">
+              <children>
+                <Label fx:id="treeLabel" alignment="CENTER" layoutX="0.0" layoutY="0.0" minWidth="60.0" prefHeight="27.0" prefWidth="295.0" style="&#10;" text="Dismi Services" textAlignment="CENTER" textFill="BLACK" wrapText="false">
+                  <font>
+                    <Font size="18.0" fx:id="x1" />
+                  </font>
+                </Label>
+                <TreeView fx:id="serviceTree" layoutX="3.0" layoutY="34.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="596.0" prefWidth="299.0" />
+              </children>
+              <effect>
+                <Glow />
+              </effect>
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+        <ScrollPane prefHeight="651.0" prefWidth="971.0">
+          <content>
+            <AnchorPane id="content" minHeight="-1.0" minWidth="-1.0" prefHeight="547.0" prefWidth="819.0">
+              <children>
+                <Label fx:id="serviceNameTitle" alignment="CENTER" font="$x1" layoutX="11.0" layoutY="3.0" prefHeight="27.0" prefWidth="880.0" style="&#10;" text="Title" textAlignment="CENTER" wrapText="false">
+                  <textFill>
+                    <Color blue="0.624" green="0.624" red="0.624" fx:id="x2" />
+                  </textFill>
+                </Label>
+                <VBox fx:id="contentContainer" layoutX="0.0" layoutY="34.0" prefHeight="609.9998779296875" prefWidth="970.0">
+                  <children>
+                    <TableView fx:id="intentTable" prefHeight="597.0" prefWidth="956.0">
+                      <columns>
+                        <TableColumn prefWidth="33.0" text="No" />
+                        <TableColumn prefWidth="60.0" text="status" />
+                        <TableColumn prefWidth="149.0" text="Name" />
+                        <TableColumn prefWidth="85.0" text="Type" />
+                        <TableColumn prefWidth="151.0" text="Source" />
+                        <TableColumn prefWidth="151.0" text="Destination" />
+                        <TableColumn prefWidth="280.0" text="Constraints" />
+                      </columns>
+                    </TableView>
+                  </children>
+                </VBox>
+              </children>
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="1282.0" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        
+        <Label fx:id="left" maxHeight="20.0" maxWidth="-1.0" prefHeight="20.0" prefWidth="638.0" text="Left status" HBox.hgrow="ALWAYS">
+          <font>
+            <Font size="10.0" fx:id="x3" />
+          </font>
+          <textFill>
+            <Color blue="0.000" green="0.000" red="0.925" fx:id="x4" />
+          </textFill>
+        </Label>
+        <Label fx:id="error" prefWidth="621.0" text="Label" alignment="CENTER_RIGHT" >
+        <font>
+            <Font size="10.0" fx:id="x3" />
+          </font>
+        </Label>
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>

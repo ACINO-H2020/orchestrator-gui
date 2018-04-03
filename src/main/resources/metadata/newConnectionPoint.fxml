@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+  ~ Copyright (c) 2018 ACINO Consortium
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="255.0" prefWidth="563.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.onosproject.orchestrator.dismi.client.cps.ConnectionPointController">
+   <children>
+      <GridPane hgap="5.0" prefHeight="286.0" prefWidth="353.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="98.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="274.0" minWidth="10.0" prefWidth="250.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="129.0" minHeight="0.0" prefHeight="39.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="267.0" minHeight="8.0" prefHeight="29.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="197.0" minHeight="8.0" prefHeight="8.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="133.0" text="Type:" textAlignment="RIGHT" />
+            <ComboBox fx:id="ncpType" prefHeight="25.0" prefWidth="197.0" GridPane.columnIndex="1" />
+            <Label fx:id="ncpLab1" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="113.0" text="Label" GridPane.rowIndex="1" />
+            <Label fx:id="ncpLab2" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="113.0" text="Label" GridPane.rowIndex="2" />
+            <Label fx:id="ncpLab3" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="114.0" text="Label" GridPane.rowIndex="3" />
+            <Label fx:id="ncpLab4" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="114.0" text="Label" GridPane.rowIndex="4" />
+            <TextField fx:id="ncpText1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="ncpText2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="ncpText3" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="ncpText4" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button fx:id="ncpSave" mnemonicParsing="false" prefHeight="25.0" prefWidth="251.0" text="Add New End Point &gt;&gt;&gt;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </GridPane>
+      <GridPane prefHeight="254.0" prefWidth="201.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="218.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="225.0" minHeight="10.0" prefHeight="213.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ListView fx:id="ncpListView" prefHeight="211.0" prefWidth="201.0" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="196.0" text="End Points" />
+         </children>
+      </GridPane>
+   </children>
+</HBox>
